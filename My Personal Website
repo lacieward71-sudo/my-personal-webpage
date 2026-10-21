@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my little internet corner ♡</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="masthead" id="top">
+      <p class="tiny-label">✧ YOUR PERSONAL SPACE ON THE INTERNET ✧</p>
+      <h1>YOUR SITE NAME HERE!</h1>
+      <p class="subtitle">a tiny piece of the internet that is just mine ♡</p>
+      <div class="visitor-counter">✿ you are visitor number <span id="visitor-count">001337</span> ✿</div>
+    </header>
+
+    <nav class="link-bar" aria-label="Site links">
+      <a href="#about">♡ about me</a>
+      <a href="#gifs">✧ my gifs</a>
+      <a href="#favorites">☆ favorites</a>
+      <a href="#journal">☁ journal</a>
+    </nav>
+
+    <main>
+      <section class="welcome panel" id="about">
+        <div class="welcome-copy">
+          <p class="tiny-label">WELCOME TO MY WORLD!</p>
+          <h2>hi, i'm <span class="editable">YOUR NAME</span> ♡</h2>
+          <p>Welcome to my little corner of the internet! This page is a collection of things I like, random thoughts, pictures, GIFs, and whatever else I want to put here.</p>
+          <p class="small-note">✧ best viewed with a snack and your favorite song playing ✧</p>
+        </div>
+        <div class="image-frame hero-image">
+          <!-- Replace this image URL with a GIF URL or your own uploaded image path. -->
+          <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="A cat typing on a computer">
+          <span class="image-caption">me on the internet</span>
+        </div>
+      </section>
+
+      <section class="panel about-panel">
+        <h2>♡ a little about me</h2>
+        <p>✿ <strong>name:</strong> Your name here</p>
+        <p>✿ <strong>currently into:</strong> music, games, art, and collecting cute things</p>
+        <p>✿ <strong>mood:</strong> daydreaming with 17 tabs open</p>
+        <p>✿ <strong>fun fact:</strong> put a fun fact about yourself here!</p>
+      </section>@import url('httconst prompts = [
+  "What song feels like your life right now?",
+  "Describe your perfect cozy day.",
+  "What character do you relate to, and why?",
+  "Write about a tiny thing that made you happy recently.",
+  "If your room had a theme, what would it be?",
+  "What is something you want to learn?",
+  "Describe your dream internet aesthetic."
+];
+
+const promptButton = document.querySelector("#new-note-button");
+const promptOutput = document.querySelector("#prompt-output");
+
+promptButton.addEventListener("click", () => {
+  const index = Math.floor(Math.random() * prompts.length);
+  promptOutput.textContent = "✧ " + prompts[index];
+});
+
+// This is a decorative example counter. It is not a real visitor tracker.
+document.querySelector("#visitor-count").textContent =
+  String(Math.floor(1000 + Math.random() * 8999)).padStart(6, "0");
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --pink: #f5b5d0;
+  --hot-pink: #c94d87;
+  --pale-pink: #fff0f7;
+  --deep-pink: #87365f;
+  --purple: #8e76b5;
+  --ink: #563c4b;
+  --paper: #fffafd;
+  --line: #e9a7c5;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 24px 12px;
+  color: var(--ink);
+  font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+  background-color: #e8d5e1;
+  background-image: radial-gradient(#ffffffa8 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.page-shell {
+  max-width: 1050px;
+  margin: auto;
+  padding: 18px;
+  background: var(--pale-pink);
+  border: 3px solid white;
+  outline: 1px solid var(--line);
+  box-shadow: 0 12px 40px #75415b24;
+}
+
+.masthead {
+  text-align: center;
+  padding: 30px 15px 24px;
+  border: 2px solid var(--line);
+  background: linear-gradient(130deg, #ffd8e9, #f8c4df 48%, #e5d8ff);
+}
+
+.tiny-label {
+  margin: 0 0 8px;
+  color: var(--hot-pink);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+h1 {
+  margin: 0;
+  color: #c94d87;
+  font-size: clamp(2rem, 6vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: .02em;
+  text-shadow: 2px 2px white, 4px 4px #e99cbe;
+}
+
+.subtitle { margin: 12px 0 8px; }
+.visitor-counter { font-size: .8rem; font-weight: 800; }
+
+.link-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 13px 0 18px;
+}
+
+.link-bar a {
+  padding: 8px 13px;
+  color: var(--deep-pink);
+  background: white;
+  border: 1px solid #f1c0d6;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 900;
+  box-shadow: 0 3px #edc0d6;
+}
+
+.link-bar a:hover { background: #ffe0ed; transform: translateY(-1px); }
+
+main { display: grid; gap: 16px; }
+
+.panel {
+  padding: 22px;
+  background: #fffafd;
+  border: 1px solid var(--line);
+  box-shadow: 3px 3px 0 #f5d3e2;
+}
+
+.panel h2 {
+  margin: 0 0 14px;
+  color: var(--deep-pink);
+  font-size: 1.35rem;
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 25px;
+  align-items: center;
+  background: linear-gradient(120deg, #fffafd, #ffe6f1);
+}
+
+.welcome h2 { font-size: clamp(1.4rem, 4vw, 2.2rem); }
+.welcome-copy p { line-height: 1.8; }
+
+.image-frame {
+  padding: 8px;
+  border: 2px dashed #d783ad;
+  background: white;
+  text-align: center;
+  transform: rotate(1.2deg);
+}
+
+.image-frame img {
+  display: block;
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.image-caption { display: block; padding: 6px 0 0; font-size: .78rem; font-weight: 800; }
+
+.small-note { color: #9b6883; font-size: .82rem; }
+
+.section-title { text-align: center; margin-bottom: 20px; }
+.section-title h2 { margin-bottom: 2px; }
+.section-title p { margin: 0; font-size: .9rem; }
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gif-card {
+  margin: 0;
+  padding: 9px;
+  background: #fff0f7;
+  border: 1px solid #f0bed4;
+  text-align: center;
+}
+
+.gif-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: white;
+}
+
+.gif-card figcaption { padding-top: 8px; font-size: .82rem; font-weight: 800; }
+.gif-placeholder::before { content: 'add your own GIF here ♡'; display: grid; height: 150px; place-items: center; color: var(--hot-pink); }
+
+.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.star-list { padding-left: 20px; line-height: 2; }
+.star-list li::marker { color: var(--hot-pink); }
+
+.journal-entry {
+  padding: 12px;
+  background: #fff0f7;
+  border-left: 3px solid var(--hot-pink);
+  font-size: .92rem;
+}
+
+.date { margin-top: 0; color: var(--hot-pink); font-weight: 900; }
+.cute-button {
+  padding: 9px 12px;
+  color: white;
+  background: var(--hot-pink);
+  border: 0;
+  border-radius: 5px;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+.cute-button:hover { background: var(--deep-pink); }
+.prompt-output { min-height: 45px; font-size: .88rem; }
+
+.stamp-panel { text-align: center; }
+.sticker-wall { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.sticker-wall span {
+  padding: 9px 12px;
+  color: #8a3d68;
+  background: #ffe1ee;
+  border: 1px dashed #d783ad;
+  font-size: .86rem;
+  font-weight: 900;
+  transform: rotate(-2deg);
+}
+.sticker-wall span:nth-child(even) { background: #e9e0ff; transform: rotate(2deg); }
+
+footer {
+  margin-top: 20px;
+  padding: 18px 8px 4px;
+  text-align: center;
+  border-top: 2px dashed var(--line);
+  font-size: .9rem;
+}
+footer a { color: var(--hot-pink); font-weight: 900; }
+
+@media (max-width: 680px) {
+  body { padding: 8px; }
+  .page-shell { padding: 9px; }
+  .welcome, .two-column { grid-template-columns: 1fr; }
+  .welcome { gap: 16px; }
+  .gif-grid { grid-template-columns: 1fr; }
+  .gif-card img { height: 190px; }
+  .panel { padding: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+ps://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --pink: #f5b5d0;
+  --hot-pink: #c94d87;
+  --pale-pink: #fff0f7;
+  --deep-pink: #87365f;
+  --purple: #8e76b5;
+  --ink: #563c4b;
+  --paper: #fffafd;
+  --line: #e9a7c5;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 24px 12px;
+  color: var(--ink);
+  font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+  background-color: #e8d5e1;
+  background-image: radial-gradient(#ffffffa8 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.page-shell {
+  max-width: 1050px;
+  margin: auto;
+  padding: 18px;
+  background: var(--pale-pink);
+  border: 3px solid white;
+  outline: 1px solid var(--line);
+  box-shadow: 0 12px 40px #75415b24;
+}
+
+.masthead {
+  text-align: center;
+  padding: 30px 15px 24px;
+  border: 2px solid var(--line);
+  background: linear-gradient(130deg, #ffd8e9, #f8c4df 48%, #e5d8ff);
+}
+
+.tiny-label {
+  margin: 0 0 8px;
+  color: var(--hot-pink);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+h1 {
+  margin: 0;
+  color: #c94d87;
+  font-size: clamp(2rem, 6vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: .02em;
+  text-shadow: 2px 2px white, 4px 4px #e99cbe;
+}
+
+.subtitle { margin: 12px 0 8px; }
+.visitor-counter { font-size: .8rem; font-weight: 800; }
+
+.link-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 13px 0 18px;
+}
+
+.link-bar a {
+  padding: 8px 13px;
+  color: var(--deep-pink);
+  background: white;
+  border: 1px solid #f1c0d6;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 900;
+  box-shadow: 0 3px #edc0d6;
+}
+
+.link-bar a:hover { background: #ffe0ed; transform: translateY(-1px); }
+
+main { display: grid; gap: 16px; }
+
+.panel {
+  padding: 22px;
+  background: #fffafd;
+  border: 1px solid var(--line);
+  box-shadow: 3px 3px 0 #f5d3e2;
+}
+
+.panel h2 {
+  margin: 0 0 14px;
+  color: var(--deep-pink);
+  font-size: 1.35rem;
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 25px;
+  align-items: center;
+  background: linear-gradient(120deg, #fffafd, #ffe6f1);
+}
+
+.welcome h2 { font-size: clamp(1.4rem, 4vw, 2.2rem); }
+.welcome-copy p { line-height: 1.8; }
+
+.image-frame {
+  padding: 8px;
+  border: 2px dashed #d783ad;
+  background: white;
+  text-align: center;
+  transform: rotate(1.2deg);
+}
+
+.image-frame img {
+  display: block;
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.image-caption { display: block; padding: 6px 0 0; font-size: .78rem; font-weight: 800; }
+
+.small-note { color: #9b6883; font-size: .82rem; }
+
+.section-title { text-align: center; margin-bottom: 20px; }
+.section-title h2 { margin-bottom: 2px; }
+.section-title p { margin: 0; font-size: .9rem; }
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gif-card {
+  margin: 0;
+  padding: 9px;
+  background: #fff0f7;
+  border: 1px solid #f0bed4;
+  text-align: center;
+}
+
+.gif-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: white;
+}
+
+.gif-card figcaption { padding-top: 8px; font-size: .82rem; font-weight: 800; }
+.gif-placeholder::before { content: 'add your own GIF here ♡'; display: grid; height: 150px; place-items: center; color: var(--hot-pink); }
+
+.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.star-list { padding-left: 20px; line-height: 2; }
+.star-list li::marker { color: var(--hot-pink); }
+
+.journal-entry {
+  padding: 12px;
+  background: #fff0f7;
+  border-left: 3px solid var(--hot-pink);
+  font-size: .92rem;
+}
+
+.date { margin-top: 0; color: var(--hot-pink); font-weight: 900; }
+.cute-button {
+  padding: 9px 12px;
+  color: white;
+  background: var(--hot-pink);
+  border: 0;
+  border-radius: 5px;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+.cute-button:hover { background: var(--deep-pink); }
+.prompt-output { min-height: 45px; font-size: .88rem; }
+
+.stamp-panel { text-align: center; }
+.sticker-wall { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.sticker-wall span {
+  padding: 9px 12px;
+  color: #8a3d68;
+  background: #ffe1ee;
+  border: 1px dashed #d783ad;
+  font-size: .86rem;
+  font-weight: 900;
+  transform: rotate(-2deg);
+}
+.sticker-wall span:nth-child(even) { background: #e9e0ff; transform: rotate(2deg); }
+
+footer {
+  margin-top: 20px;
+  padding: 18px 8px 4px;
+  text-align: center;
+  border-top: 2px dashed var(--line);
+  font-size: .9rem;
+}
+footer a { color: var(--hot-pink); font-weight: 900; }
+
+@media (max-width: 680px) {
+  body { padding: 8px; }
+  .page-shell { padding: 9px; }
+  .welcome, .two-column { grid-template-columns: 1fr; }
+  .welcome { gap: 16px; }
+  .gif-grid { grid-template-columns: 1fr; }
+  .gif-card img { height: 190px; }
+  .panel { padding: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+const prompts = [
+  "What song feels like your life right now?",
+  "Describe your perfect cozy day.",
+  "What character do you relate to, and why?",
+  "Write about a tiny thing that made you happy recently.",
+  "If your room had a theme, what would it be?",
+  "What is something you want to learn?",
+  "Describe your dream internet aesthetic."
+];
+
+const promptButton = document.querySelector("#new-note-button");
+const promptOutput = document.querySelector("#prompt-output");
+
+promptButton.addEventListener("click", () => {
+  const index = Math.floor(Math.random() * prompts.length);
+  promptOutput.textContent = "✧ " + prompts[index];
+});
+
+// This is a decorative example counter. It is not a real visitor tracker.
+document.querySelector("#visitor-count").textContent =
+  String(Math.floor(1000 + Math.random() * 8999)).padStart(6, "0");
+
+
+      <section class="panel" id="gifs">
+        <div class="section-title">const prompts = [
+  "What song feels like your life right now?",
+  "Describe your perfect cozy day.",
+  "What character do you relate to, and why?",
+  "Write about a tiny thing that made you happy recently.",
+  "If your room had a theme, what would it be?",
+  "What is something you want to learn?",
+  "Describe your dream internet aesthetic."
+];
+
+const promptButton = document.querySelector("#new-note-button");
+const promptOutput = document.querySelector("#prompt-output");
+
+promptButton.addEventListener("click", () => {
+  const index = Math.floor(Math.random() * prompts.length);
+  promptOutput.textContent = "✧ " + prompts[index];
+});
+
+// This is a decorative example counter. It is not a real visitor tracker.
+document.querySelector("#visitor-count").textContent =
+  String(Math.floor(1000 + Math.random() * 8999)).padStart(6, "0");
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --pink: #f5b5d0;
+  --hot-pink: #c94d87;
+  --pale-pink: #fff0f7;
+  --deep-pink: #87365f;
+  --purple: #8e76b5;
+  --ink: #563c4b;
+  --paper: #fffafd;
+  --line: #e9a7c5;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 24px 12px;
+  color: var(--ink);
+  font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+  background-color: #e8d5e1;
+  background-image: radial-gradient(#ffffffa8 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.page-shell {
+  max-width: 1050px;
+  margin: auto;
+  padding: 18px;
+  background: var(--pale-pink);
+  border: 3px solid white;
+  outline: 1px solid var(--line);
+  box-shadow: 0 12px 40px #75415b24;
+}
+
+.masthead {
+  text-align: center;
+  padding: 30px 15px 24px;
+  border: 2px solid var(--line);
+  background: linear-gradient(130deg, #ffd8e9, #f8c4df 48%, #e5d8ff);
+}
+
+.tiny-label {
+  margin: 0 0 8px;
+  color: var(--hot-pink);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+h1 {
+  margin: 0;
+  color: #c94d87;
+  font-size: clamp(2rem, 6vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: .02em;
+  text-shadow: 2px 2px white, 4px 4px #e99cbe;
+}
+
+.subtitle { margin: 12px 0 8px; }
+.visitor-counter { font-size: .8rem; font-weight: 800; }
+
+.link-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 13px 0 18px;
+}
+
+.link-bar a {
+  padding: 8px 13px;
+  color: var(--deep-pink);
+  background: white;
+  border: 1px solid #f1c0d6;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 900;
+  box-shadow: 0 3px #edc0d6;
+}
+
+.link-bar a:hover { background: #ffe0ed; transform: translateY(-1px); }
+
+main { display: grid; gap: 16px; }
+
+.panel {
+  padding: 22px;
+  background: #fffafd;
+  border: 1px solid var(--line);
+  box-shadow: 3px 3px 0 #f5d3e2;
+}
+
+.panel h2 {
+  margin: 0 0 14px;
+  color: var(--deep-pink);
+  font-size: 1.35rem;
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 25px;
+  align-items: center;
+  background: linear-gradient(120deg, #fffafd, #ffe6f1);
+}
+
+.welcome h2 { font-size: clamp(1.4rem, 4vw, 2.2rem); }
+.welcome-copy p { line-height: 1.8; }
+
+.image-frame {
+  padding: 8px;
+  border: 2px dashed #d783ad;
+  background: white;
+  text-align: center;
+  transform: rotate(1.2deg);
+}
+
+.image-frame img {
+  display: block;
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.image-caption { display: block; padding: 6px 0 0; font-size: .78rem; font-weight: 800; }
+
+.small-note { color: #9b6883; font-size: .82rem; }
+
+.section-title { text-align: center; margin-bottom: 20px; }
+.section-title h2 { margin-bottom: 2px; }
+.section-title p { margin: 0; font-size: .9rem; }
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gif-card {
+  margin: 0;
+  padding: 9px;
+  background: #fff0f7;
+  border: 1px solid #f0bed4;
+  text-align: center;
+}
+
+.gif-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: white;
+}
+
+.gif-card figcaption { padding-top: 8px; font-size: .82rem; font-weight: 800; }
+.gif-placeholder::before { content: 'add your own GIF here ♡'; display: grid; height: 150px; place-items: center; color: var(--hot-pink); }
+
+.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.star-list { padding-left: 20px; line-height: 2; }
+.star-list li::marker { color: var(--hot-pink); }
+
+.journal-entry {
+  padding: 12px;
+  background: #fff0f7;
+  border-left: 3px solid var(--hot-pink);
+  font-size: .92rem;
+}
+
+.date { margin-top: 0; color: var(--hot-pink); font-weight: 900; }
+.cute-button {
+  padding: 9px 12px;
+  color: white;
+  background: var(--hot-pink);
+  border: 0;
+  border-radius: 5px;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+.cute-button:hover { background: var(--deep-pink); }
+.prompt-output { min-height: 45px; font-size: .88rem; }
+
+.stamp-panel { text-align: center; }
+.sticker-wall { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.sticker-wall span {
+  padding: 9px 12px;
+  color: #8a3d68;
+  background: #ffe1ee;
+  border: 1px dashed #d783ad;
+  font-size: .86rem;
+  font-weight: 900;
+  transform: rotate(-2deg);
+}
+.sticker-wall span:nth-child(even) { background: #e9e0ff; transform: rotate(2deg); }
+
+footer {
+  margin-top: 20px;
+  padding: 18px 8px 4px;
+  text-align: center;
+  border-top: 2px dashed var(--line);
+  font-size: .9rem;
+}
+footer a { color: var(--hot-pink); font-weight: 900; }
+
+@media (max-width: 680px) {
+  body { padding: 8px; }
+  .page-shell { padding: 9px; }
+  .welcome, .two-column { grid-template-columns: 1fr; }
+  .welcome { gap: 16px; }
+  .gif-grid { grid-template-columns: 1fr; }
+  .gif-card img { height: 190px; }
+  .panel { padding: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+          <h2>✧ my gif collection ✧</h2>
+          <p>little moving pictures that make me happy</p>
+        </div>
+        <div class="gif-grid">
+          <figure class="gif-card">
+            <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif" alt="Cute animated cat">
+            <figcaption>internet creature ♡</figcaption>
+          </figure>
+          <figure class="gif-card">
+            <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute cat waving">
+            <figcaption>little hello!</figcaption>
+          </figure>
+          <figure class="gif-card">
+            <img src="https://media.giphy.com/media/mlv soq9V5pV6/giphy.gif" alt="Decorative GIF" onerror="this.style.display='none'; this.parentElement.classList.add('gif-placeholder')">
+            <figcaption>replace me with your gif</figcaption>
+          </figure>
+        </div>
+        <p class="small-note">Tip: use GIF files you have permission to use. You can put them in a folder called <code>images</code> and use <code>images/mygif.gif</code> as the image source.</p>
+      </section>
+
+      <section class="two-column">
+        <section class="panel" id="favorites">
+          <h2>☆ things i love</h2>
+          <ul class="star-list">
+            <li>favorite song: [write it here]</li>
+            <li>favorite color: [write it here]</li>
+            <li>favorite game: [write it here]</li>
+            <li>favorite character: [write it here]</li>
+          </ul>
+        </section>
+        <section class="panel" id="journal">
+          <h2>☁ tiny journal</h2>
+          <article class="journal-entry">
+            <p class="date">10.21.26 — first post!</p>
+            <p>i made my own website!! i'll keep adding little things to it whenever i feel like it. ♡</p>
+          </article>
+          <button class="cute-button" id="new-note-button" type="button">give me a writing prompt ✧</button>
+          <p id="prompt-output" aria-live="polite" class="prompt-output">click for a random journal idea!</p>
+        </section>
+      </section>
+
+      <section class="panel stamp-panel">
+        <h2>♡ my little sticker wall ♡</h2>
+        <div class="sticker-wall">
+          <span>✧ dream big ✧</span><span>♡ be kind ♡</span><span>☆ stay silly ☆</span><span>✿ made of stardust ✿</span><span>☁ daydream club ☁</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>made with ♡ by YOUR NAME · <a href="#top">back to top ↑</a></p>
+      <p class="small-note">this is my page, my rules, my little corner of the web.</p>
+    </footer>
+  </div>
+</body>
+</html>
