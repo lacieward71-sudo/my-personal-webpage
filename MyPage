@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>My Little Corner</title>
+
+  <style>
+
+    body {
+
+      background: #f8efff;
+
+      color: #563d69;
+
+      font-family: Verdana, sans-serif;
+
+      text-align: center;
+
+      margin: 0;
+
+      padding: 30px 15px;
+
+    }
+
+    .profile {
+
+      max-width: 600px;
+
+      margin: auto;
+
+      background: #fffaff;
+
+      border: 2px solid #c79bea;
+
+      border-radius: 20px;
+
+      padding: 25px;
+
+      box-shadow: 0 6px 0 #e6d2f5;
+
+    }
+
+    h1 { color: #995fc0; }
+
+    .section {
+
+      background: #f8efff;
+
+      padding: 15px;
+
+      margin-top: 15px;
+
+      border-radius: 14px;
+
+    }
+
+    img {
+
+      max-width: 100%;
+
+      border-radius: 12px;
+
+    }
+
+    a { color: #995fc0; }
+
+  </style>
+
+</head>
+
+<body>
+
+  <main class="profile">
+
+    <h1>♡ Hello, I'm Your Name! ♡</h1>
+
+    <p>Welcome to my little corner of the internet!</p>
+
+    <div class="section">
+
+      <h2>🎀 About Me</h2>
+
+      <p>Hi! I'm [your name]. This is my personal website!</p>
+
+    </div>
+
+    <div class="section">
+
+      <h2>💗 My Interests</h2>
+
+      <p>Music · Games · Friends · Art</p>
+
+    </div>
+
+    <div class="section">
+
+      <h2>🌷 My Favorite GIF</h2>
+
+      <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif"
+
+           alt="Cute animated GIF">
+
+    </div>
+
+    <div class="section">
+
+      <h2>🔗 Find Me</h2>
+
+      <a href="https://github.com/">My GitHub</a>
+
+    </div>
+
+    <p>Made with ♡ by me!</p>
+
+  </main>
+
+</body>
+
+</html>
