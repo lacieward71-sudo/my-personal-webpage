@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Personal Website</title>
+  <style>
+    :root {
+      --bg: #f8efff;
+      --card: #fffaff;
+      --text: #563d69;
+      --accent: #c79bea;
+      --accent-dark: #995fc0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 28px 16px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Verdana, Arial, sans-serif;
+      text-align: center;
+      line-height: 1.6;
+    }
+    main {
+      width: min(680px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+      background: var(--card);
+      border: 2px solid var(--accent);
+      border-radius: 22px;
+      box-shadow: 0 6px 0 #e6d2f5;
+    }
+    h1, h2 { color: var(--accent-dark); }
+    .decoration { letter-spacing: 5px; }
+    section {
+      margin-top: 18px;
+      padding: 16px;
+      background: var(--bg);
+      border-radius: 14px;
+    }
+    a { color: var(--accent-dark); }
+    footer { margin-top: 22px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="decoration" aria-hidden="true">✧ ⋆ ˚｡⋆୨୧˚ ⋆｡˚ ⋆</p>
+    <h1>♡ Hello, I'm [Your Name]! ♡</h1>
+    <p>Welcome to my little corner of the internet!</p>
+
+    <section>
+      <h2>🎀 About Me</h2>
+      <p>Hi! I'm [Your Name]. This is my personal website for my class project.</p>
+      <p>You can edit this text to tell visitors a little about yourself.</p>
+    </section>
+
+    <section>
+      <h2>💗 My Interests</h2>
+      <p>Music · Games · Art · Friends</p>
+      <p>Replace these with some of your favorite things!</p>
+    </section>
+
+    <section>
+      <h2>🌷 My Favorite Things</h2>
+      <p>Favorite color: [Your Favorite Color]</p>
+      <p>Favorite game: [Your Favorite Game]</p>
+    </section>
+
+    <section>
+      <h2>🔗 My Links</h2>
+      <p><a href="https://github.com/lacieward71-sudo">Visit my GitHub profile</a></p>
+    </section>
+
+    <footer>Made with ♡ by [Your Name]</footer>
+  </main>
+</body>
+</html>
